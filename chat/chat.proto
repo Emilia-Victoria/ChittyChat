@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package chat;
+option go_package = "https://github.com/Emilia-Victoria/ChittyChat;chat";
+
+service ChittyChat {
+    rpc publishMessage (Message) returns (MessageAck){}
+    rpc joinChat (Chatty) returns (stream Message) {}
+    rpc leaveChat (Chatty) returns (stream Message) {}
+}
+
+message Message {}
+
+message MessageAck {
+    string reply = 1;
+}
+
+message Chatty {}
