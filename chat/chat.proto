@@ -4,7 +4,7 @@ package chat;
 option go_package = "https://github.com/Emilia-Victoria/ChittyChat;chat";
 
 service ChittyChat {
-    rpc publishMessage (Message) returns (MessageAck){}
+    rpc publishMessage (stream Message) returns (MessageAck){}
     rpc joinChat (JoinRequest) returns (stream Message) {}
     rpc leaveChat (LeaveRequest) returns (stream Message) {}
 
