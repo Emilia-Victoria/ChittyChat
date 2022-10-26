@@ -5,11 +5,13 @@ import (
 	"log"
 	"net"
 
-	//chat "github.com/Emilia-Victoria/ChittyChat/chat"
+	chat "github.com/Emilia-Victoria/ChittyChat/chat"
 	"google.golang.org/grpc"
 )
 
-type Server struct{}
+type Server struct {
+	chat.UnimplementedChittyChatServer
+}
 
 func main() {
 	list, err := net.Listen("tcp", ":9080")
@@ -18,6 +20,10 @@ func main() {
 	}
 	grpcServer := grpc.NewServer()
 	//chat.RegisterGetCurrentTimeServer(grpcServer, &Server{})
+
+	chat.RegisterChittyChatServer(grpcServer, &Server{}) //Registers the server to the gRPC server.
+
+	//log.Printf("Server %s: Listening at %v\n", *serverName, list.Addr())
 
 	if err := grpcServer.Serve(list); err != nil {
 		log.Fatalf("failed to server %v", err)

@@ -7,14 +7,25 @@ service ChittyChat {
     rpc publishMessage (Message) returns (MessageAck){}
     rpc joinChat (JoinRequest) returns (stream Message) {}
     rpc leaveChat (LeaveRequest) returns (stream Message) {}
+
 }
 
-message Message {}
+message Message {
+    string sender = 1;
+    string message = 2;
+    int64 lampTime = 3;
+}
 
 message MessageAck {
     string reply = 1;
 }
 
-message JoinRequest {}
+message JoinRequest  {
+    string user = 1;
+    int64 lampTime = 2;
+}
 
-message LeaveRequest {}
+message LeaveRequest {
+    string user = 1;
+    int64 lampTime = 2;
+}
