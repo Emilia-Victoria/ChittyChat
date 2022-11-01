@@ -68,8 +68,6 @@ func joinChat(ctx context.Context, client chat.ChittyChatClient) {
 	if err != nil {
 		log.Fatalf("client.JoinChannel(ctx, &channel) throws: %v", err)
 	}
-	welcome := *username + " has joined the chat: " + *channel + "! ( ･_･)♡"
-	publishMessage(ctx, client, welcome)
 
 	waitc := make(chan struct{}) //go never stops with this
 
@@ -96,25 +94,6 @@ func joinChat(ctx context.Context, client chat.ChittyChatClient) {
 		}
 	}()
 	<-waitc
-}
-
-func leaveChat(ctx context.Context, client chat.ChittyChatClient) {
-
-	*lamportTime++
-	stream, err := client.PublishMessage(ctx)
-	if err != nil {
-		log.Printf("Unable to send leave message: error: %v", err)
-	}
-	msg := chat.Message{
-		Sender:   *username,
-		LampTime: *lamportTime,
-	}
-	log.Printf("This user has left the chat: %v, (%v)", *username, *lamportTime)
-
-	stream.Send(&msg)
-
-	ack, _ := stream.CloseAndRecv()
-	fmt.Printf("Message has been sent: %v \n", ack)
 }
 
 //( ͡ಥ ͜ʖ ͡ಥ) ⊙︿⊙ (つ◉益◉)つ ୧( ಠ Д ಠ )୨ ᕕ(˵•̀෴•́˵)ᕗ (＞﹏＜)

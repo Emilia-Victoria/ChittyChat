@@ -61,7 +61,7 @@ func (s *Server) JoinChat(ch *chat.JoinRequest, msgStream chat.ChittyChat_JoinCh
 	msgChannel := make(chan *chat.Message)
 	s.messageChannel = append(s.messageChannel, msgChannel)
 
-	announcementMsg := chat.Message{Sender: "Server", Message: ch.User + " joined the chat"}
+	announcementMsg := chat.Message{Sender: "Server", Message: ch.User + " joined the chat! ( ･_･)♡"}
 	s.sendMessage(&announcementMsg)
 
 	for {
@@ -86,7 +86,6 @@ func (s *Server) sendMessage(msg *chat.Message) {
 		default:
 		}
 	}
-	log.Printf("User: %s sent message \"%s\"", msg.Sender, msg.GetMessage())
 }
 
 func (s *Server) LeaveChat(*chat.LeaveRequest, chat.ChittyChat_LeaveChatServer) error {

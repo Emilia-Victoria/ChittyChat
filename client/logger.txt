@@ -20,3 +20,25 @@
 2022/11/01 14:33:52 (19) Server: Emilia left the chat 
 2022/11/01 14:33:52 (18) Server: Emilia left the chat 
 2022/11/01 14:33:54 (19) Server: Baldur left the chat 
+2022/11/01 14:40:56 (2) Benjamin:  
+2022/11/01 14:41:01 (3) Server: Emilia joined the chat! ( ･_･)♡ 
+2022/11/01 14:41:01 (2) Server: Emilia joined the chat! ( ･_･)♡ 
+2022/11/01 14:41:15 (5) Baldur: Hiii 
+2022/11/01 14:41:15 (5) Baldur: Hiii 
+2022/11/01 14:41:24 (7) Benjamin: Sup dude 
+2022/11/01 14:41:24 (7) Benjamin: Sup dude 
+2022/11/01 14:41:33 (9) Emilia: Omg hello 
+2022/11/01 14:41:33 (9) Emilia: Omg hello 
+2022/11/01 14:42:01 (11) Benjamin: Sooooooo, elefants are wierd 
+2022/11/01 14:42:01 (11) Benjamin: Sooooooo, elefants are wierd 
+2022/11/01 14:42:05 (13) Baldur: No? 
+2022/11/01 14:42:05 (13) Baldur: No? 
+2022/11/01 14:42:11 (15) Emilia: How? 
+2022/11/01 14:42:11 (15) Emilia: How? 
+2022/11/01 14:42:15 (17) Benjamin: Ok nvm 
+2022/11/01 14:42:15 (17) Benjamin: Ok nvm 
+2022/11/01 14:42:17 (18) Server: Benjamin left the chat 
+2022/11/01 14:42:17 (18) Server: Benjamin left the chat 
+2022/11/01 14:42:25 (20) Baldur: Wierd dude 
+2022/11/01 14:42:29 (22) Emilia: Yeah 
+2022/11/01 14:42:38 (23) Server: Emilia left the chat 
