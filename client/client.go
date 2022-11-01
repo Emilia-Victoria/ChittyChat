@@ -25,6 +25,16 @@ func main() {
 
 	fmt.Println("Connecting... (° ͜ʖ °)")
 
+	file, err := os.OpenFile("logger.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+
+	if err != nil {
+		log.Fatalf("error opening file: %v", err)
+	}
+
+	defer file.Close()
+
+	log.SetOutput(file)
+
 	conn, err := grpc.Dial(":9080", grpc.WithInsecure())
 
 	if err != nil {
@@ -80,6 +90,8 @@ func joinChat(ctx context.Context, client chat.ChittyChatClient) {
 					*lamportTime++
 				}
 				fmt.Printf("(%v) %v: %v \n", *lamportTime, in.Sender, in.Message)
+				log.Printf("(%v) %v: %v \n", *lamportTime, in.Sender, in.Message)
+
 			}
 		}
 	}()

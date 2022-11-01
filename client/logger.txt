@@ -1,0 +1,22 @@
+2022/11/01 14:30:36 (3) Server: Benjamin joined the chat 
+2022/11/01 14:30:40 (4) Benjamin: Hi 
+2022/11/01 14:30:44 (6) Baldur: Sup dude 
+2022/11/01 14:31:14 (6) Server: Emilia joined the chat 
+2022/11/01 14:31:14 (7) Server: Emilia joined the chat 
+2022/11/01 14:31:17 (7) Emilia: Anyone here? 
+2022/11/01 14:31:17 (8) Emilia: Anyone here? 
+2022/11/01 14:31:54 (10) Benjamin: Yeah, men 
+2022/11/01 14:31:54 (10) Benjamin: Yeah, men 
+2022/11/01 14:33:24 (11) Benjamin: Oops, miss spelled, meant: Yeah, me 
+2022/11/01 14:33:24 (11) Benjamin: Oops, miss spelled, meant: Yeah, me 
+2022/11/01 14:33:30 (13) Emilia: haha yeah okay 
+2022/11/01 14:33:30 (13) Emilia: haha yeah okay 
+2022/11/01 14:33:34 (14) Emilia: any one else? 
+2022/11/01 14:33:34 (14) Emilia: any one else? 
+2022/11/01 14:33:38 (16) Baldur: Sure 
+2022/11/01 14:33:38 (16) Baldur: Sure 
+2022/11/01 14:33:49 (18) Benjamin: I see dead people 
+2022/11/01 14:33:49 (18) Benjamin: I see dead people 
+2022/11/01 14:33:52 (19) Server: Emilia left the chat 
+2022/11/01 14:33:52 (18) Server: Emilia left the chat 
+2022/11/01 14:33:54 (19) Server: Baldur left the chat 
