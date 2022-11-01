@@ -14,6 +14,7 @@ import (
 	"google.golang.org/grpc"
 )
 
+var channel = flag.String("Channel", "default", "Chitty-Chat")
 var username = flag.String("user", "default", "username")
 var lamportTime = flag.Int64("time", 0, "lamportTimeStamp")
 
@@ -51,13 +52,13 @@ func main() {
 
 func joinChat(ctx context.Context, client chat.ChittyChatClient) {
 
-	joinreq := chat.JoinRequest{User: *username}
+	joinreq := chat.JoinRequest{User: *username, Channel: *channel}
 	stream, err := client.JoinChat(ctx, &joinreq)
 
 	if err != nil {
 		log.Fatalf("client.JoinChannel(ctx, &channel) throws: %v", err)
 	}
-	welcome := *username + " has joined the chat! ( ･_･)♡"
+	welcome := *username + " has joined the chat: " + *channel + "! ( ･_･)♡"
 	publishMessage(ctx, client, welcome)
 
 	waitc := make(chan struct{}) //go never stops with this
@@ -78,7 +79,7 @@ func joinChat(ctx context.Context, client chat.ChittyChatClient) {
 				} else {
 					*lamportTime++
 				}
-				fmt.Printf("(%v) %v: %v \n", lamportTime, in.Sender, in.Message)
+				fmt.Printf("(%v) %v: %v \n", *lamportTime, in.Sender, in.Message)
 			}
 		}
 	}()
@@ -119,6 +120,6 @@ func publishMessage(ctx context.Context, client chat.ChittyChatClient, message s
 
 	stream.Send(&msg)
 	ack, _ := stream.CloseAndRecv()
-	fmt.Printf("Message has been sent: %v \n", ack)
+	fmt.Printf(" %v \n", ack)
 
 }

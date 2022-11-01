@@ -17,12 +17,13 @@ message Message {
 }
 
 message MessageAck {
-    string reply = 1;
+    bool isSent = 1;
 }
 
 message JoinRequest  {
     string user = 1;
-    int64 lampTime = 2;
+    string channel = 2;
+    int64 lampTime = 3;
 }
 
 message LeaveRequest {

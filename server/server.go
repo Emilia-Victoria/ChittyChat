@@ -33,9 +33,10 @@ func main() {
 	if err := grpcServer.Serve(list); err != nil {
 		log.Fatalf("failed to server %v", err)
 	}
+	fmt.Printf("Server started successfully")
 }
 
-func (s *Server) Send(msgStream chat.ChittyChat_PublishMessageServer) error {
+func (s *Server) PublishMessage(msgStream chat.ChittyChat_PublishMessageServer) error {
 
 	msg, err := msgStream.Recv()
 
@@ -47,7 +48,7 @@ func (s *Server) Send(msgStream chat.ChittyChat_PublishMessageServer) error {
 		return err
 	}
 
-	ack := chat.MessageAck{Reply: "Sent"}
+	ack := chat.MessageAck{IsSent: true}
 	msgStream.SendAndClose(&ack)
 
 	go s.sendMessage(msg)
